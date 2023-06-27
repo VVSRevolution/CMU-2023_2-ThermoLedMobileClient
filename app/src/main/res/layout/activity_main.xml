@@ -8,14 +8,16 @@
 
     <EditText
         android:id="@+id/port"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="40dp"
+        android:layout_width="231dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="28dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:text="50051"
+        android:textAlignment="center"
+        android:textSize="25sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/host" />
 
@@ -32,13 +34,59 @@
 
     <TextView
         android:id="@+id/textViewTemperature"
-        android:layout_width="176dp"
-        android:layout_height="19dp"
-        android:layout_marginTop="236dp"
-        android:text="Temperature will show here"
+        android:layout_width="120dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="216dp"
+        android:accessibilityHeading="false"
+        android:text="TEMP"
+        android:textAlignment="center"
+        android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintHorizontal_bias="0.125"
         app:layout_constraintStart_toEndOf="@+id/getTempButton"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/C"
+        android:layout_width="40dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="216dp"
+        android:layout_marginEnd="28dp"
+        android:accessibilityHeading="false"
+        android:text="°C"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.187"
+        app:layout_constraintStart_toEndOf="@+id/textViewTemperature"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtip2"
+        android:layout_width="80dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="36dp"
+        android:accessibilityHeading="false"
+        android:text="IP"
+        android:textAlignment="gravity"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.096"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtip"
+        android:layout_width="81dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="112dp"
+        android:accessibilityHeading="false"
+        android:text="PORT"
+        android:textAlignment="gravity"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.093"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
@@ -56,8 +104,8 @@
         android:id="@+id/ledOffButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="76dp"
-        android:layout_marginTop="348dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="336dp"
         android:onClick="ledOffRequest"
         android:text="Led Off"
         app:layout_constraintStart_toEndOf="@+id/ledOnButton"
@@ -65,14 +113,16 @@
 
     <EditText
         android:id="@+id/host"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_width="234dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="136dp"
         android:layout_marginTop="32dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="34.136.25.200"
+        android:text="34.224.71.89"
+        android:textAlignment="center"
+        android:textSize="25sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

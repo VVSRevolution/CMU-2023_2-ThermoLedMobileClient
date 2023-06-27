@@ -43,8 +43,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
 
+        boolean loginON = true;
+
+
+        setContentView(R.layout.activity_login);
         usernameEditText = findViewById(R.id.usernameEditText);
         passwordEditText = findViewById(R.id.passwordEditText);
         loginButton = findViewById(R.id.loginButton);
@@ -55,10 +58,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String username = usernameEditText.getText().toString();
                 String password = passwordEditText.getText().toString();
-                setContentView(R.layout.activity_main);
-                performLogin(username, password);
+
+                //performLogin(username, password);
+                startMainApp();
             }
         });
+    }
+    private void startMainApp() {
+        setContentView(R.layout.activity_main);
 
         temperatureResultText = (TextView) findViewById(R.id.textViewTemperature);
         hostEdit = (EditText) findViewById(R.id.host);
@@ -69,27 +76,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void performLogin(String username, String password) {
-        // Verifique as credenciais do usuário aqui
-        // Se as credenciais estiverem corretas, inicie a atividade principal
-        if (TextUtils.equals(username, "user") && TextUtils.equals(password, "password")) {
-            startMainApp();
-        } else {
-            // Exiba uma mensagem de erro ou realize outra ação apropriada
-        }
-    }
     public void sendTemperatureRequest(View view) {
         ((InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE))
                 .hideSoftInputFromWindow(hostEdit.getWindowToken(), 0);
         getTemperatureButton.setEnabled(false);
         temperatureResultText.setText("");
         new GrpcTask(this).execute(hostEdit.getText().toString(), portEdit.getText().toString(), "sensor01");
-    }
-    private void startMainApp() {
-        setContentView(R.layout.activity_main);
-
-        // Restante do código da atividade principal aqui
-
     }
 
     private static class GrpcTask extends AsyncTask<String, Void, String> {
